@@ -19,8 +19,7 @@
             return json_encode($this);
         }
 
-        public function sayOneliner()
-        {
+        public function sayOneliner(){
             echo '<h2>' . $this->oneliner . '</h2>';
         }
     }
