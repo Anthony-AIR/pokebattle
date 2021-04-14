@@ -8,6 +8,7 @@
         public $attacks;
         public $weakness;
         public $resistance;
+        public static $getPopulation = 0;
 
         public function __construct($name, $energyType, $maxHitPoints, $hitPoints, $attacks, $weakness, $resistance){
             $this->name = $name;
@@ -17,6 +18,12 @@
             $this->attacks = $attacks;
             $this->weakness = $weakness;
             $this->resistance = $resistance;
+            self::$getPopulation++;
+        }
+
+        public static function destroy($pikachu){
+            unset($pikachu);
+            self::$getPopulation--;
         }
 
         public function __toString() {
