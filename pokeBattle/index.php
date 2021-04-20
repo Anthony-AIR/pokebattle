@@ -32,6 +32,7 @@
     print_r("<br>" . $squirtle->name);
 
     print_r("<br><br><br>");
+
     //attack
     print_r( $pikachu->name . " vs " . $charmeleon->name . "<br><br>");
     print_r( $pikachu->name . "'s hp: " . $pikachu->hitPoints . "<br>" . $charmeleon->name . "'s hp: " . $charmeleon->hitPoints . "<br>" );
@@ -42,7 +43,7 @@
     $pikachuAttack = $pikachu->attacks["attack1"];
     if( $pikachu->energyType == $charmeleon->weakness["weaknessName"] ){
       $pikachuAttack =  $pikachu->attacks["attack1"] * $charmeleon->weakness["multiplier"];
-      print_r( "it was not very affective <br>" );
+      print_r( "it was very affective <br>" );
     }
     if( $pikachu->energyType == $charmeleon->resistance["resistanceName"] ){
       $pikachuAttack =  $pikachu->attacks["attack1"] - $charmeleon->resistance["waarde"];
@@ -76,7 +77,8 @@
     //population
     print_r( "population is " . pokemon::$getPopulation . "<br>");
     if( $pikachu->hitPoints <= 15 ){
-      pokemon::destroy($pikachu);
+      unset($pikachu);
+      pokemon::$getPopulation--;
     }
     print_r( "population is " . pokemon::$getPopulation );
     print_r("<pre>" . $pikachu . "</pre>");

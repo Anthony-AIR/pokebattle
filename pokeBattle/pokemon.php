@@ -21,9 +21,9 @@
             self::$getPopulation++;
         }
 
-        public static function destroy($pikachu){
-            unset($pikachu);
-            self::$getPopulation--;
+        public static function destroy(){
+            //unset($pikachu);
+            //self::$getPopulation--;
         }
 
         public function __toString() {
