@@ -21,11 +21,6 @@
             self::$getPopulation++;
         }
 
-        public static function destroy(){
-            //unset($pikachu);
-            //self::$getPopulation--;
-        }
-
         public function __toString() {
             return json_encode($this);
         }
