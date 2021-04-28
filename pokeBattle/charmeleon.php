@@ -10,7 +10,7 @@ class charmeleon extends pokemon{
         $weakness = [ "weaknessName" => "water", "multiplier" => "2"];
         $resistance = [ "resistanceName" => "lightning", "waarde" => "10"];
 
-        parent::__construct($name, $energyType, $MaxHitPoints, $Hitpoints, $attacks, $weakness, $resistance);
+        parent::__construct($name, $energyType, $maxHitPoints, $hitPoints, $attacks, $weakness, $resistance);
     }
 }
 ?>

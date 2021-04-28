@@ -10,7 +10,7 @@ class pikachu extends pokemon{
         $weakness = [ "weaknessName" => "fire", "multiplier" => "1.5"];
         $resistance = [ "resistanceName" => "fighting", "waarde" => "20"];
 
-        parent::__construct($name, $energyType, $MaxHitPoints, $Hitpoints, $attacks, $weakness, $resistance);
+        parent::__construct($name, $energyType, $maxHitPoints, $hitPoints, $attacks, $weakness, $resistance);
     }
 }
 ?>

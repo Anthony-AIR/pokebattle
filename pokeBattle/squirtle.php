@@ -10,7 +10,7 @@ class squirtle extends pokemon{
         $weakness = [ "weaknessName" => "fire", "multiplier" => "1.5"];
         $resistance = [ "resistanceName" => "grass", "waarde" => "30"];
 
-        parent::__construct($name, $energyType, $MaxHitPoints, $Hitpoints, $attacks, $weakness, $resistance);
+        parent::__construct($name, $energyType, $maxHitPoints, $hitpoints, $attacks, $weakness, $resistance);
     }
 }
 ?>

@@ -1,13 +1,13 @@
 <?php
 
     class pokemon{
-        public $name;
-        public $energyType;
-        public $maxHitPoints;
-        public $hitPoints;
-        public $attacks;
-        public $weakness;
-        public $resistance;
+        //public $name;
+        //public $energyType;
+        //public $maxHitPoints;
+        //public $hitPoints;
+        //public $attacks;
+        //public $weakness;
+        //public $resistance;
         public static $getPopulation = 0;
 
         public function __construct($name, $energyType, $maxHitPoints, $hitPoints, $attacks, $weakness, $resistance){

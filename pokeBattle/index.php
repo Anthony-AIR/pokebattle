@@ -56,9 +56,14 @@
         $pikachu->hitPoints = $pikachu->hitPoints - $charmeleonAttack;
         print_r( $pikachu->name . "'s hp: " . $pikachu->hitPoints . "<br><br>");
 
+
+
+    //pikachu extra damage
+        $pikachu->hitPoints =- $pikachu->hitpoints;
+
     //population
       print_r( "population is " . pokemon::$getPopulation . "<br>");
-      if( $pikachu->hitPoints <= 15 ){
+      if( $pikachu->hitPoints <= 0 ){
         unset($pikachu);
         pokemon::$getPopulation--;
       }
