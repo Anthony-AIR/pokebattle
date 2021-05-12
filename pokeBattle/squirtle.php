@@ -6,9 +6,9 @@ class squirtle extends pokemon{
         $energyType = "water";
         $maxHitPoints = 60;
         $hitPoints = 60;
-        $attacks = [ "nameAttack1" => "Aqua Tail", "attack1" => "20", "nameAttack2" => "hydro pump", "attack2" => "40" ];
-        $weakness = [ "weaknessName" => "fire", "multiplier" => "1.5"];
-        $resistance = [ "resistanceName" => "grass", "waarde" => "30"];
+        $attacks = [ new attack( "Aqua Tail", 20 ), new attack( "Hydro Pump", 40 ) ];
+        $weakness = [ new weakness( "fire", 1.5 ) ];
+        $resistance = [ new resistance( "grass", 30 ) ];
 
         parent::__construct($name, $energyType, $maxHitPoints, $hitpoints, $attacks, $weakness, $resistance);
     }

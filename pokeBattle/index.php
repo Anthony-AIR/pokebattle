@@ -3,6 +3,9 @@
     require "pikachu.php";
     require "charmeleon.php";
     require "squirtle.php";
+    require "attack.php";
+    require "weakness.php";
+    require "resistance.php";
   //pokemon
     //pikachu
       $pikachu =  new pikachu(" ");
@@ -22,39 +25,13 @@
         print_r( $pikachu->name . " doet " . $pikachu->attacks["nameAttack1"] . " attack <br>" );
 
       //attack damage berekenen
-        $pikachuAttack = $pikachu->attacks["attack1"];
-        if( $pikachu->energyType == $charmeleon->weakness["weaknessName"] ){
-          $pikachuAttack =  $pikachu->attacks["attack1"] * $charmeleon->weakness["multiplier"];
-          print_r( "it was very affective <br>" );
-        }
-        if( $pikachu->energyType == $charmeleon->resistance["resistanceName"] ){
-          $pikachuAttack =  $pikachu->attacks["attack1"] - $charmeleon->resistance["waarde"];
-          print_r( "it was not very affective <br>" );
-        }
-        else{
-            print_r( "it was affective <br>" );
-        }
-        $charmeleon->hitPoints = $charmeleon->hitPoints - $pikachuAttack;
-        print_r( $charmeleon->name . "'s hp: " . $charmeleon->hitPoints . "<br>" );
+        pokemon::calculateDamage(0,$charmeleon, $pikachu);
 
       //next move
         print_r( $charmeleon->name . " doet " . $charmeleon->attacks["nameAttack2"] . " attack <br>" );
 
       //attack damage berekenen
-        $charmeleonAttack = $charmeleon->attacks["attack2"];
-        if( $charmeleon->energyType == $pikachu->weakness["weaknessName"] ){
-          $charmeleonAttack =  $charmeleon->attacks["attack2"] * $pikachu->weakness["multiplier"];
-          print_r( "it was very affective <br>" );
-        }
-        if( $charmeleon->energyType == $charmeleon->resistance["resistanceName"] ){
-          $charmeleonAttack =  $charmeleon->attacks["attack2"] - $pikachu->resistance["waarde"];
-          print_r( "it was not very affective <br>" );
-        }
-        else{
-            print_r( "it was affective <br>" );
-        }
-        $pikachu->hitPoints = $pikachu->hitPoints - $charmeleonAttack;
-        print_r( $pikachu->name . "'s hp: " . $pikachu->hitPoints . "<br><br>");
+        pokemon::calculateDamage(1, $pikachu,$charmeleon);
 
 
 

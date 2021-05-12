@@ -6,11 +6,14 @@ class pikachu extends pokemon{
         $energyType = "lightning";
         $maxHitPoints = 60;
         $hitPoints = 60;
-        $attacks = [ "nameAttack1" => "electric Ring", "attack1" => "50", "nameAttack2" => "pika punch", "attack2" => "20" ];
-        $weakness = [ "weaknessName" => "fire", "multiplier" => "1.5"];
-        $resistance = [ "resistanceName" => "fighting", "waarde" => "20"];
+        $attacks = [ new attack( "electric ring", 50 ), new attack( "pika punch", 20 ) ];
+        $weakness = [ new weakness( "fire", 1.5 ) ];
+        $resistance = [ new resistance( "fighting", 20 ) ];
 
-        parent::__construct($name, $energyType, $maxHitPoints, $hitPoints, $attacks, $weakness, $resistance);
+        parent::__construct( $name, $energyType, $maxHitPoints, $hitPoints, $attacks, $weakness, $resistance );
     }
 }
+
+// var $pokemon = new pikachu();
+// $pokemon->attacks[0]->damage;
 ?>
