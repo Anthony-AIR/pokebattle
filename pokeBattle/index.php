@@ -22,16 +22,20 @@
       print_r( $pikachu->name . " vs " . $charmeleon->name . "<br><br>");
       print_r( $pikachu->name . "'s hp: " . $pikachu->hitPoints . "<br>" . $charmeleon->name . "'s hp: " . $charmeleon->hitPoints . "<br>" );
       //first move
-        print_r( $pikachu->name . " doet " . $pikachu->attacks["nameAttack1"] . " attack <br>" );
+        print_r( $pikachu->name . " doet " . $pikachu->attacks[0]->attackName . " attack <br>" );
 
       //attack damage berekenen
         pokemon::calculateDamage(0,$charmeleon, $pikachu);
+        print_r( pokemon::$damageStatement );
+        print_r( $charmeleon->name . "'s hp: " . $charmeleon->hitPoints . "<br><br>");
 
       //next move
-        print_r( $charmeleon->name . " doet " . $charmeleon->attacks["nameAttack2"] . " attack <br>" );
+        print_r( $charmeleon->name . " doet " . $charmeleon->attacks[1]->attackName . " attack <br>" );
 
       //attack damage berekenen
         pokemon::calculateDamage(1, $pikachu,$charmeleon);
+        print_r( pokemon::$damageStatement );
+        print_r( $pikachu->name . "'s hp: " . $pikachu->hitPoints . "<br><br>");
 
 
 

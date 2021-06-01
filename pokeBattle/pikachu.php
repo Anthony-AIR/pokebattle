@@ -6,7 +6,7 @@ class pikachu extends pokemon{
         $energyType = "lightning";
         $maxHitPoints = 60;
         $hitPoints = 60;
-        $attacks = [ new attack( "electric ring", 50 ), new attack( "pika punch", 20 ) ];
+        $attacks = [ new attack( "electric ring", 50 ), new attack( "pika punch", 20 ), new attack( "electric tail", 30 ) ];
         $weakness = [ new weakness( "fire", 1.5 ) ];
         $resistance = [ new resistance( "fighting", 20 ) ];
 
