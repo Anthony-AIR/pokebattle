@@ -4,7 +4,6 @@ class pikachu extends pokemon{
     public function __construct(){
         $name = "pikachu";
         $energyType = "lightning";
-        $maxHitPoints = 60;
         $hitPoints = 60;
         $attacks = [ new attack( "electric ring", 50 ), new attack( "pika punch", 20 ), new attack( "electric tail", 30 ) ];
         $weakness = [ new weakness( "fire", 1.5 ) ];

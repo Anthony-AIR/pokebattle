@@ -1,11 +1,6 @@
 <?php
-    require "pokemon.php";
-    require "pikachu.php";
-    require "charmeleon.php";
-    require "squirtle.php";
-    require "attack.php";
-    require "weakness.php";
-    require "resistance.php";
+  require "autoloading.php";
+
   //pokemon
     //pikachu
       $pikachu =  new pikachu(" ");
@@ -19,32 +14,32 @@
     print_r("<br><br><br>");
   //other
     //attack
-      print_r( $pikachu->name . " vs " . $charmeleon->name . "<br><br>");
-      print_r( $pikachu->name . "'s hp: " . $pikachu->hitPoints . "<br>" . $charmeleon->name . "'s hp: " . $charmeleon->hitPoints . "<br>" );
+      print_r( $pikachu->getName() . " vs " . $charmeleon->getName() . "<br><br>");
+      print_r( $pikachu->getName() . "'s hp: " . $pikachu->getHitPoints() . "<br>" . $charmeleon->getName() . "'s hp: " . $charmeleon->getHitPoints() . "<br>" );
       //first move
-        print_r( $pikachu->name . " doet " . $pikachu->attacks[0]->attackName . " attack <br>" );
+        print_r( $pikachu->getName() . " doet " . $pikachu->getAttackName(0) . " attack <br>" );
 
       //attack damage berekenen
-        pokemon::calculateDamage(0,$charmeleon, $pikachu);
+        $pikachu->calculateDamage(0,$charmeleon);
         print_r( pokemon::$damageStatement );
-        print_r( $charmeleon->name . "'s hp: " . $charmeleon->hitPoints . "<br><br>");
+        print_r( $charmeleon->getName() . "'s hp: " . $charmeleon->getHitPoints() . "<br><br>");
 
       //next move
-        print_r( $charmeleon->name . " doet " . $charmeleon->attacks[1]->attackName . " attack <br>" );
+        print_r( $charmeleon->getName() . " doet " . $charmeleon->getAttackName(1) . " attack <br>" );
 
       //attack damage berekenen
-        pokemon::calculateDamage(1, $pikachu,$charmeleon);
+        $charmeleon->calculateDamage(1, $pikachu);
         print_r( pokemon::$damageStatement );
-        print_r( $pikachu->name . "'s hp: " . $pikachu->hitPoints . "<br><br>");
+        print_r( $pikachu->getName() . "'s hp: " . $pikachu->getHitPoints() . "<br><br>");
 
 
 
     //pikachu extra damage
-        $pikachu->hitPoints =- $pikachu->hitpoints;
+        $pikachu->setHitPoints( $pikachu->getHitPoints() );
 
     //population
       print_r( "population is " . pokemon::$getPopulation . "<br>");
-      if( $pikachu->hitPoints <= 0 ){
+      if( $pikachu->getHitPoints() <= 0 ){
         unset($pikachu);
         pokemon::$getPopulation--;
       }
